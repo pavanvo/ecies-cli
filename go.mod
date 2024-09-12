@@ -1,4 +1,4 @@
-module shared/eciesgo
+module shared/ecies-cli
 
 go 1.20
 
