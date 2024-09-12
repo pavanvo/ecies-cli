@@ -83,10 +83,10 @@ func publicKey(privateKeyB64 string) {
 
 func usage() {
 	builder := strings.Builder{}
-	builder.WriteString(fmt.Sprintf("    privatekey\n"))
-	builder.WriteString(fmt.Sprintf("    publickey PRIVATE_KEY\n"))
-	builder.WriteString(fmt.Sprintf("    decrypt PRIVATE_KEY MESSAGE\n"))
-	builder.WriteString(fmt.Sprintf("    decrypt PRIVATE_KEY MESSAGE\n"))
+	builder.WriteString("    privatekey\n")
+	builder.WriteString("    publickey PRIVATE_KEY\n")
+	builder.WriteString("    decrypt PRIVATE_KEY MESSAGE\n")
+	builder.WriteString("    decrypt PRIVATE_KEY MESSAGE\n")
 
 	fmt.Printf("Command Line Options\nUsage: %s [\n%s]", os.Args[0], builder.String())
 	os.Exit(0)
@@ -109,27 +109,23 @@ func main() {
 		}
 
 		privateKey()
-		break
 	case "publickey":
 		if len(os.Args) != 3 {
 			usage()
 		}
 
 		publicKey(os.Args[2])
-		break
 	case "encrypt":
 		if len(os.Args) != 4 {
 			usage()
 		}
 
 		encrypt(os.Args[2], os.Args[3])
-		break
 	case "decrypt":
 		if len(os.Args) != 4 {
 			usage()
 		}
 
 		decrypt(os.Args[2], os.Args[3])
-		break
 	}
 }
